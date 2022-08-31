@@ -2,6 +2,7 @@
 En este archivo encontramos ejercicios para introducirnos en el lenguaje, 
 ejercicios introductorios para uso de variables y ejercicios con operadores.
 """
+import numpy as np
 
 #====================== EJERCICIOS INTRODUCTORIOS ====================
 #==>  EJERCICIO 1 
@@ -29,18 +30,38 @@ if lmin==1:
 if lhor==1:
     hor='0'+hor
 
+print('formato --> hora:minutos')
 print(hor+':'+min)
 
 
 #==>  EJERCICIO 2 
 """ ¿Qué radio debe tener una esfera, para que su volumen sea el mismo al de un cubo de lado 5 cm? """
+print('')
+print('EJERCICO 2')
+print('')
+
+vcubo=5**3
+#vesfera=(4/3)*np.pi*(r**3)
+
+r=(((5**3)*(3/4))/(np.pi))**(1/3)
+print('el radio que debe tener una esfera para que su volumen sea de 125 unidades cubicas es:',r)
+
+
 
 #==>  EJERCICIO 3 
 """ ¿Cuantas veces supera, el area de un cubo, al area de una esfera, si el lado del
 cubo es 10 cm. Y el radio de la esfera 2 cm ? """
+print('')
+print('EJERCICO 3')
+print('')
+
 
 #==>  EJERCICIO 4 
 """ Realice un código, que permita la conversión de millas a km y km a millas """
+print('')
+print('EJERCICO 4')
+print('')
+
 
 #==>  EJERCICIO 5 
 """ Dadas las coordenadas P1(5,4,5) y P2(0,10,9).
