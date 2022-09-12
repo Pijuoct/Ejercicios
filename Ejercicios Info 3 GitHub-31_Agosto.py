@@ -2,6 +2,7 @@
 En este archivo encontramos ejercicios para introducirnos en el lenguaje, 
 ejercicios introductorios para uso de variables y ejercicios con operadores.
 """
+from cgi import print_arguments
 import numpy as np
 ejercicio=int(input('Que ejercicio desea ejecutar --> '))
 
@@ -45,7 +46,7 @@ elif ejercicio==2:
     print('')
 
     vcubo=5**3
-    #vesfera=(4/3)*np.pi*(r**3)
+    #v_esfera=(4/3)*np.pi*(r**3)
 
     r=(((5**3)*(3/4))/(np.pi))**(1/3)
     print('el radio que debe tener una esfera para que su volumen sea de 125 unidades cubicas es:',r)
@@ -59,6 +60,16 @@ elif ejercicio==3:
     print('EJERCICO 3')
     print('')
 
+    lado_cubo=10
+    area_cubo=8*(10**2)
+
+    radio_esfera=2
+    area_esfera=4*np.pi*(radio_esfera**2)
+
+    diferencia=area_cubo-area_esfera
+
+    print('el area del cubo supera al dDDe la esfera en %d centimetros cubicos'%diferencia)
+
 
 elif ejercicio==4:
     #==>  EJERCICIO 4 
@@ -66,6 +77,22 @@ elif ejercicio==4:
     print('')
     print('EJERCICO 4')
     print('')
+    
+
+    print('Bienvenido a nuestro conversor\n\nIngrese "millas" para convertir millas a kilometros\nIngrese "kilometros" para convertir kilometros a millas')
+    opciones=input('--> ')
+
+    if opciones=='millas':
+        numero=float(input('Ingrese las millas --> '))
+        kilometros=numero*1.609
+        print('%.4f millas corresponden a %.4f kilometros'%(numero,kilometros))
+    elif opciones=='kilometros':
+        numero=float(input('Ingrese los kilometros --> '))
+        millas=numero/1.609
+        print('%.4f millas corresponden a %.4f kilometros'%(numero,millas))
+    else:
+        print('El usuario no ingreso unidades validas')
+
 
 
 elif ejercicio==5:
@@ -182,7 +209,7 @@ elif ejercicio==15:
 
     #====================== EJERCICIOS OPERADORES ====================
 elif ejercicio==16:
-    #==> Ejercicio 1 
+    #==> Ejercicio 16
     """ Realice las siguientes operaciones mentalmente. Intente determinar la respuesta, luego verifique en python
 
        1 + 3 - 5      "cristian" + "Unal"     [1,2,3] + [4,5,6]    True and False          5 > 3          1 in [1,2,3]
@@ -198,13 +225,13 @@ elif ejercicio==16:
        """
 
 elif ejercicio==17:
-    #==> EJERCICIO 2 
+    #==> EJERCICIO 17
     """ ¿Qué operaciones puede realizar con los anteriores operadores?
     ¿Qué tipos de datos se pueden utilizar con cada uno de los operadores? """
 
 
 elif ejercicio==18:
-    #==> EJERCICIO 3 
+    #==> EJERCICIO 18
     """ De los operadores *, /, +. ¿Cual tiene mayor prioridad?
     => 3 / 2 * 5  compare con 3 * 2 / 5
     => 3 / 2 + 5  compare con 3 + 2 / 5
@@ -212,7 +239,7 @@ elif ejercicio==18:
 
 
 elif ejercicio==19:
-    #==> EJERCICIO 4 
+    #==> EJERCICIO 19
     """ De los operadores *, **. ¿Cual tiene mayor prioridad?
     => 3 * 2 ** 5  compare con 3 ** 2 * 5
     => 2 * 2 ** 3  compare con 2 ** 2 * 3
@@ -220,7 +247,7 @@ elif ejercicio==19:
 
 
 elif ejercicio==20:
-    #==> EJERCICIO 5 
+    #==> EJERCICIO 20
     """ De los operadores *, /, //, % ¿cual tiene mayor prioridad?:
     => 13 // 6 * 2 compare con 27 // 6 * 2
     => 13 / 6 // 2 compare con 13 // 6 / 2
@@ -228,7 +255,7 @@ elif ejercicio==20:
 
 
 elif ejercicio==21:
-    #==> EJERCICIO 6 
+    #==> EJERCICIO 21
     """ Realice las siguientes operaciones, y determine:
     ¿Cuál es el orden de prioridades de los operadores not, and, or?
     => not True and False
@@ -238,7 +265,7 @@ elif ejercicio==21:
 
 
 elif ejercicio==22:
-    #==> EJERCICIO 7
+    #==> EJERCICIO 22
     """ Intente determinar mentalmente la salida de las siguientes operaciones
      1 and 2 and 3     1 or 2 or 3
      1 and 0 and 3     1 or 0 or 3
