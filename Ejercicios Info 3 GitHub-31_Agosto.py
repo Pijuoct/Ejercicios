@@ -100,6 +100,14 @@ elif ejercicio==5:
     """ Dadas las coordenadas P1(5,4,5) y P2(0,10,9).
     Realice un codigo que determine la distancia entre ambos puntos """
 
+    distancia_x=(5-0)**2
+    distancia_y=(4-10)**2
+    distancia_z=(5-9)**2
+
+    sumatoria=distancia_x+distancia_y+distancia_z
+    distancia_total=(sumatoria)**(1/2)
+
+    print('la distancia total entre los puntos (5,4,5) y (0,10,9) es %.4f unidades'%distancia_total)
 
 
 elif ejercicio==6:
