@@ -2,9 +2,9 @@
 En este archivo encontramos ejercicios para introducirnos en el lenguaje, 
 ejercicios introductorios para uso de variables y ejercicios con operadores.
 """
-from cgi import print_arguments
+
 import numpy as np
-ejercicio=int(input('Que ejercicio desea ejecutar --> '))
+ejercicio=int(input('Que ejercicio desea ejecutar (1 a 22)--> '))
 
 
 if ejercicio==1:
@@ -100,6 +100,10 @@ elif ejercicio==5:
     """ Dadas las coordenadas P1(5,4,5) y P2(0,10,9).
     Realice un codigo que determine la distancia entre ambos puntos """
 
+    print('')
+    print('EJERCICO 5')
+    print('')
+
     distancia_x=(5-0)**2
     distancia_y=(4-10)**2
     distancia_z=(5-9)**2
@@ -116,6 +120,19 @@ elif ejercicio==6:
     con porcentajes de 15%, 25%, 20% y 40%. Si un estudiante tiene las primeras 3 calificaciones definidas.
     Realice un algoritmo que calcule la nota necesaria de la última nota para pasar la materia. """
 
+    print('')
+    print('EJERCICO 6')
+    print('')
+
+    nota_1=float(input('Ingrese su 1ra nota --> '))*0.15
+    nota_2=float(input('Ingrese su 2da nota --> '))*0.25
+    nota_3=float(input('Ingrese su 3ra nota --> '))*0.2
+
+    #nota_final=(nota_1*0.15)+(nota_2*0.25)+(nota_3*0.2)+(nota_4*0.4)
+    nota_4=(3-nota_1-nota_2-nota_3)/0.4
+
+    print('Necesitas un %.2f para pasar tu materia ¡Animoo!'%nota_4)
+
 
 elif ejercicio==7:
     #==>  EJERCICIO 7 
@@ -123,6 +140,18 @@ elif ejercicio==7:
      con porcentajes de 15%, 25%, 20% y 40%. Si un estudiante tiene las primeras 2 calificaciones definidas.
     Realice un algoritmo que calcule la nota necesaria de las dos últimas notas para pasar la materia. """
 
+    print('')
+    print('EJERCICO 7')
+    print('')
+
+    nota_1=float(input('Ingrese su 1ra nota --> '))*0.15
+    nota_2=float(input('Ingrese su 2da nota --> '))*0.25
+
+    nota_3=float(input('Ingrese la 3ra nota que desearia sacar, asi en base calcular la 4ta necesaria --> '))*0.2    
+
+    nota_4=(3-nota_1-nota_2-nota_3)/0.4
+
+    print('Necesitas un %.2f para pasar tu materia ¡Animoo!'%nota_4)
 
 elif ejercicio==8:
     #==>  EJERCICIO 8 
@@ -143,6 +172,20 @@ elif ejercicio==8:
 
     ¿Cuanto debe pagar cada estudiante? """
 
+    pago_lunes=15000/4
+    pago_martes=15000/3
+    pago_miercoles=15000/2
+    pago_jueves=15000/1
+    pago_viernes=10000/4
+
+    pago_juan=pago_lunes+pago_martes+pago_jueves+pago_viernes
+    pago_camila=pago_lunes+pago_martes+pago_viernes
+    pago_jose=pago_lunes+pago_miercoles+pago_viernes
+    pago_maria=pago_lunes+pago_martes+pago_miercoles+pago_viernes
+
+    print('El pago que debe hacer cada estudiante es:\nJuan=%.2f\nCamila=%.2f\nJose=%.2f\nMaria=%.2f'%(pago_juan,pago_camila,pago_jose,pago_maria))
+
+
 
 elif ejercicio==9:
     #==>  EJERCICIO 9 
@@ -156,6 +199,9 @@ elif ejercicio==9:
         b) Para un salario de $10'000.000. ¿Cuántos seguros debe vender?
         c) Si un empleado devenga $15'000.000. ¿Cuantos salarios vendió en promedio al dia? 
            Teniendo en cuenta que solo trabajaba de lunes a jueves """
+
+    #a
+    
 
 
 elif ejercicio==10:
