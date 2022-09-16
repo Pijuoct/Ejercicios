@@ -52,7 +52,7 @@ print(fib1)
 print(fib2)
 
 while n<9: # Yo prefiero colocar la condición aquí
-    fibNext = fib1 + fib2
+    fibNext = fib1 +    fib2
     print(fibNext)
     fib1, fib2 = fib2, fibNext
     n += 1
