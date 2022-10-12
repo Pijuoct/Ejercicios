@@ -250,6 +250,7 @@ for codigo in range(1,20):
         clase[str(codigo)]=dict(zip(materias,notas[codigo-1]))
 
 print(clase['13']['Cuantica'])
+print(clase)
 
 
 #=============================================
