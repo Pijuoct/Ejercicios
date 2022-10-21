@@ -29,8 +29,13 @@ def insertarCaracterEnTablero(tableroLogico:list,posicion:int,caracter:str):
 
     while tableroLogico[posicion]!=None:
         
-        posicion=int(input('Ingrese una posicion DISPONIBLE por favor --> '))
-    
+        posicion=input('Ingrese una posicion DISPONIBLE por favor --> ')
+
+        while posicion not in ('0','1','2','3','4','5','6','7','8'):
+            posicion=input('Ingrese una posicion VALIDA y DISPONIBLE (0-8) --> ')
+
+        posicion=int(posicion)
+
     tableroLogico[posicion]=caracter
 
     return tableroLogico
