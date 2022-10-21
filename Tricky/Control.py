@@ -48,7 +48,7 @@ while hayganador==None and None in tableroLogico:
 
 turno=turno-1
 
-if None not in tableroLogico:
+if None not in tableroLogico and hayganador==None:
     print('Empate, No hay ganador')
 else:
     if turno%2!=0:
