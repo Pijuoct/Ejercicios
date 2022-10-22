@@ -8,22 +8,22 @@ print('')
 
 import Logica
 
-tablero=Logica.generarTableroLogico()
-tableroFijo=Logica.generarTableroLogico()
+tableroLogico=Logica.generarTableroLogico()
+tableroLogicoFijo=Logica.generarTableroLogico()
 
-[tablero,tableroFijo]=Logica.generarNumerosFijos(tablero,tableroFijo)
+[tableroLogico,tableroLogicoFijo]=Logica.generarNumerosFijos(tableroLogico,tableroLogicoFijo)
 
 vacio=True
 
 while vacio==True:
-    Interfaz.imprimirTablero(tablero)
+    Interfaz.imprimirTablero(tableroLogico)
 
     coordenadas=input('Ingrese las coordenadas donde ingresará el número (a-b) --> ')
 
     [cuadro_mayor,posicion]=coordenadas.split('-')
 
     while (cuadro_mayor not in ('0','1','2','3','4','5','6','7','8')) or (posicion not in ('0','1','2','3','4','5','6','7','8')):
-            coordenadas=input('Ingrese una coordenadas VALIDA  (0-8) --> ')
+            coordenadas=input('Ingrese unas coordenadas VALIDAS  (0-8) --> ')
             [cuadro_mayor,posicion]=coordenadas.split('-')
 
 
@@ -34,9 +34,14 @@ while vacio==True:
         numero=input('Ingrese un numero VALIDO (1-9) --> ')
 
 
-    tablero=Logica.insertarNumeroEnTablero(tablero,coordenadas,numero)
+    if tableroLogicoFijo[int(cuadro_mayor)][int(posicion)]==None:
 
-    for cuadricula in tablero:
+        tableroLogico=Logica.insertarNumeroEnTablero(tableroLogico,coordenadas,numero)
+    else:
+        print('El numero en esta posicion (%s-%s) es FIJO y por ende no puede ser reemplazado'%(cuadro_mayor,posicion))
+
+
+    for cuadricula in tableroLogico:
         if None not in cuadricula:
             vacio=False
             break

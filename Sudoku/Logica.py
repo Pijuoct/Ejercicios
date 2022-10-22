@@ -33,18 +33,6 @@ def insertarNumeroEnTablero(tableroLogico:list,coordenadas:str,numero:str):
     cuadro_mayor=int(cuadro_mayor)
     posicion=int(posicion)
 
-    while tableroLogico[cuadro_mayor][posicion]!=None:
-        
-        coordenadas=input('Ingrese unas coordenadas DISPONIBLE por favor --> ')
-        [cuadro_mayor,posicion]=coordenadas.split('-')
-
-        while (cuadro_mayor not in ('0','1','2','3','4','5','6','7','8')) or (posicion not in ('0','1','2','3','4','5','6','7','8')):
-            coordenadas=input('Ingrese una coordenadas VALIDA y DISPONIBLE (0-8) --> ')
-            [cuadro_mayor,posicion]=coordenadas.split('-')
-        
-        cuadro_mayor=int(cuadro_mayor)
-        posicion=int(posicion)
-
     tableroLogico[cuadro_mayor][posicion]=numero
 
     return tableroLogico
@@ -109,36 +97,53 @@ def generarNumerosFijos(tableroLogico_1:list,tableroLogico_2):
 
         posicion=[0,1,2,3,4,5,6,7,8]
         numeros=[1,2,3,4,5,6,7,8,9]
-        cantidad=(2,3,4)
+        cantidad=(2,3,4,5)
 
         cantidad_aleatoria=random.choice(cantidad)
 
         for i in range(0,cantidad_aleatoria):
 
-            pos=random.choice(posicion)
-            posicion.remove(pos)
+            if numeros!=[]:
 
-            [linea1,linea2]=lineasInterceptasDic['('+str(cuadro)+','+str(pos)+')']
+                pos=random.choice(posicion)
+                posicion.remove(pos)
 
-            fila1=[]
-            fila2=[]
+                [linea1,linea2]=lineasInterceptasDic['('+str(cuadro)+','+str(pos)+')']
 
-            for cuadro1,posicion1 in lineasHDic[linea1]:
-                numeroExistente=tableroLogico_1[cuadro1][posicion1]
-                fila1.append(numeroExistente)
+                fila1=[]
+                fila2=[]
 
-            for cuadro1,posicion1 in lineasVDic[linea2]:
-                numeroExistente=tableroLogico_1[cuadro1][posicion1]
-                fila2.append(numeroExistente)
-            
+                for cuadro1,posicion1 in lineasHDic[linea1]:
+                    numeroExistente=tableroLogico_1[cuadro1][posicion1]
+                    fila1.append(numeroExistente)
 
-            num=random.choice(numeros)
-            while num in fila1 or num in fila2:
-                numeros.remove(num)
+                for cuadro1,posicion1 in lineasVDic[linea2]:
+                    numeroExistente=tableroLogico_1[cuadro1][posicion1]
+                    fila2.append(numeroExistente)
+
+
                 num=random.choice(numeros)
+                numeros.remove(num)
 
-            tableroLogico_1[cuadro][pos]=num
-            tableroLogico_2[cuadro][pos]=num
+                while num in fila1 or num in fila2:
+                    numerosFilas=[]
+
+                    if numeros!=[]:
+                        num=random.choice(numeros)
+                        numerosFilas.append(num)
+                        numeros.remove(num)
+                    else:
+                        num=' '
+                        break
+                    
+                    numerosFilas.remove(num)
+                    numeros.extend(numerosFilas)
+
+                tableroLogico_1[cuadro][pos]=num
+                tableroLogico_2[cuadro][pos]=num
+            else:
+                break
+
 
     return tableroLogico_1,tableroLogico_2
 
@@ -148,9 +153,9 @@ if __name__=="__main__":
     tablero=generarTableroLogico()
     tableroFijo=generarTableroLogico()
 
-    [tablero,tableroFijo]=generarNumerosFijos(tablero,tableroFijo)
+    #[tablero,tableroFijo]=generarNumerosFijos(tablero,tableroFijo)
     
-
+    #insertarNumeroEnTablero(tablero,'0-0',1)
 
 
     Interfaz.imprimirTablero(tableroFijo)
