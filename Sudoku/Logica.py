@@ -50,19 +50,47 @@ def insertarNumeroEnTablero(tableroLogico:list,coordenadas:str,numero:str):
     return tableroLogico
 
 
+
+def generarNumerosFijos(tableroLogico_1:list,tableroLogico_2):
+    import random
+
+    cuadros=(0,1,2,3,4,5,6,7,8)
+
+    for cuadro in cuadros:
+
+        posicion=[0,1,2,3,4,5,6,7,8]
+        numeros=[0,1,2,3,4,5,6,7,8]
+        cantidad=(2,3,4)
+
+        cantidad_aleatoria=random.choice(cantidad)
+
+        for i in range(0,cantidad_aleatoria):
+
+            pos=random.choice(posicion)
+            posicion.remove(pos)
+
+            num=random.choice(numeros)
+            numeros.remove(num)
+
+            tableroLogico_1[cuadro][pos]=num
+            tableroLogico_2[cuadro][pos]=num
+
+    return tableroLogico_1,tableroLogico_2
+
 if __name__=="__main__":
     import Interfaz
 
     tablero=generarTableroLogico()
-    Interfaz.imprimirTablero(tablero)
+    tableroFijo=generarTableroLogico()
+    #Interfaz.imprimirTablero(tablero)
+
+    [tablero,tableroFijo]=generarNumerosFijos(tablero,tableroFijo)
+    
+
+    tablero=insertarNumeroEnTablero(tablero,'0-0','8')
+    tablero=insertarNumeroEnTablero(tablero,'1-0','8')
 
 
-    tablero=insertarNumeroEnTablero(tablero,'4-8','8')
-    tablero=insertarNumeroEnTablero(tablero,'4-8','9')
-    tablero=insertarNumeroEnTablero(tablero,'5-1','2')
-    tablero=insertarNumeroEnTablero(tablero,'0-3','9')
-    tablero=insertarNumeroEnTablero(tablero,'7-8','1')
-    tablero=insertarNumeroEnTablero(tablero,'8-5','4')
-
+    Interfaz.imprimirTablero(tableroFijo)
     Interfaz.imprimirTablero(tablero)
 

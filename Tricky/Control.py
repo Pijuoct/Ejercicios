@@ -56,4 +56,4 @@ else:
     else:
         ganador=2
 
-    print('El ganador es el jugador %i con las %s'%(ganador,caracter))
+    print('El ganador es el jugador %i con el %s'%(ganador,caracter))
