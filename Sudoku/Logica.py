@@ -38,7 +38,7 @@ def insertarNumeroEnTablero(tableroLogico:list,coordenadas:str,numero:str):
         coordenadas=input('Ingrese unas coordenadas DISPONIBLE por favor --> ')
         [cuadro_mayor,posicion]=coordenadas.split('-')
 
-        while (cuadro_mayor and posicion) not in ('0','1','2','3','4','5','6','7','8'):
+        while (cuadro_mayor not in ('0','1','2','3','4','5','6','7','8')) or (posicion not in ('0','1','2','3','4','5','6','7','8')):
             coordenadas=input('Ingrese una coordenadas VALIDA y DISPONIBLE (0-8) --> ')
             [cuadro_mayor,posicion]=coordenadas.split('-')
         
@@ -58,10 +58,11 @@ if __name__=="__main__":
 
 
     tablero=insertarNumeroEnTablero(tablero,'4-8','8')
-    tablero=insertarNumeroEnTablero(tablero,'2-6','9')
+    tablero=insertarNumeroEnTablero(tablero,'4-8','9')
     tablero=insertarNumeroEnTablero(tablero,'5-1','2')
     tablero=insertarNumeroEnTablero(tablero,'0-3','9')
     tablero=insertarNumeroEnTablero(tablero,'7-8','1')
+    tablero=insertarNumeroEnTablero(tablero,'8-5','4')
 
     Interfaz.imprimirTablero(tablero)
 
