@@ -134,6 +134,7 @@ def generarNumerosFijos(tableroLogico_1:list,tableroLogico_2):
                         numeros.remove(num)
                     else:
                         num=' '
+                        #print('BREAK')
                         break
                     
                     numerosFilas.remove(num)
@@ -142,6 +143,7 @@ def generarNumerosFijos(tableroLogico_1:list,tableroLogico_2):
                 tableroLogico_1[cuadro][pos]=num
                 tableroLogico_2[cuadro][pos]=num
             else:
+                #print('BREAK')
                 break
 
 
