@@ -19,9 +19,9 @@ def instrucciones():
     estar los numeros del 1 al 9 sin repeticion. ademas cada linea recta (horizontal y 
     vertical) tambien debe poseer los numeros del 1 al 9 sin repeticion.
 
-    Para jugar debe ingresar la posicion de la forma "a-b" donde a,b son numeros entre 0 y 8
+    Para jugar debe ingresar la posicion de la forma "a-b"; donde a,b son numeros entre 0 y 8
     el numero "a" corresponde al cuadro mayor y el numero "b" a la posicion dentro del cuadro
-    mayor elegido.
+    mayor elegido; y posteriormente el numero en dicha posicion.
     
     Las posiciones posibles son:
 
@@ -44,6 +44,9 @@ def instrucciones():
     ||-----------------||-----------------||-----------------||
     || 6-6 | 6-7 | 6-8 || 7-6 | 7-7 | 7-8 || 8-6 | 8-7 | 8-8 ||
     ===========================================================
+
+
+    =====================================================================
     """
     print(mensaje)
 
@@ -80,6 +83,8 @@ def imprimirTablero(tableroLogico:list):
                tableroLogico[6][6],tableroLogico[6][7],tableroLogico[6][8],tableroLogico[7][6],tableroLogico[7][7],tableroLogico[7][8],tableroLogico[8][6],tableroLogico[8][7],tableroLogico[8][8]).replace('None',' ')
 
     print(tableroVisual)
+    print('_______________________________________________________')
+    print('')
 
 if __name__=="__main__":
     instrucciones()

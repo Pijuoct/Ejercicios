@@ -59,7 +59,7 @@ def generarNumerosFijos(tableroLogico_1:list,tableroLogico_2):
     for cuadro in cuadros:
 
         posicion=[0,1,2,3,4,5,6,7,8]
-        numeros=[0,1,2,3,4,5,6,7,8]
+        numeros=[1,2,3,4,5,6,7,8,9]
         cantidad=(2,3,4)
 
         cantidad_aleatoria=random.choice(cantidad)
@@ -82,7 +82,6 @@ if __name__=="__main__":
 
     tablero=generarTableroLogico()
     tableroFijo=generarTableroLogico()
-    #Interfaz.imprimirTablero(tablero)
 
     [tablero,tableroFijo]=generarNumerosFijos(tablero,tableroFijo)
     
