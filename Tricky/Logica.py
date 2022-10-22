@@ -8,9 +8,6 @@ Este modulo contiene 3 funciones:
 * generarTableroLogico(): No recibe nada,
                           retonra una lista de Nones
 
-* generarPosiciones(): No recibe nada,
-                       returno una lista de Nones
-
 * insertarCaracterEntablero(): Recibe (lista,posicion,caracter)
                                retorna una lista actualizada
 
