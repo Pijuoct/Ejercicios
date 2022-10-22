@@ -7,8 +7,8 @@ Este modulo contiene 3 funciones:
 * insertarNumeroEntablero(): Recibe (lista de listas,coordenadas,numero)
                                retorna una lista actualizada
 
-* determinarGanador(): Recibe una lista(tablero)
-                       retorna una lista (tablero) y retorna ganador
+* generarNumerosFijos(): Recibe dos listas (tableroLogico_1,TableroLogico_2)
+                         retorna dos lista (tableroLogico,TableroLogicoFijo)
 
 """
 
