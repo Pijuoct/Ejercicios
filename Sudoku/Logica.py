@@ -39,7 +39,7 @@ def insertarNumeroEnTablero(tableroLogico:list,coordenadas:str,numero:str):
 
 
 
-def generarNumerosFijos(tableroLogico_1:list,tableroLogico_2):
+def generarNumerosFijos(tableroLogico_1:list,tableroLogico_2:list):
     import random
 
     cuadros=(0,1,2,3,4,5,6,7,8)
@@ -72,79 +72,127 @@ def generarNumerosFijos(tableroLogico_1:list,tableroLogico_2):
 
     lineasVDic=dict(zip(NombresV,lineasV))
 
+    """for index in lineasHDic.keys():
+        numeros=[1,2,3,4,5,6,7,8,9]
+        numeroremovido=[]
+        for cuadro,posicion in lineasHDic[index]:
+
+            print(numeros)
+            num=random.choice(numeros)
+            print(num)
+            numeros.remove(num)
+            numeroremovido.append(num)
+
+            dupla=(cuadro,posicion)
+ 
+            for Clave in lineasVDic.keys():
+                if dupla in lineasVDic[Clave]:
+                    numerosV=[]
+
+                    for cuadro1,posicion1 in lineasVDic[Clave]:
+                        numeroexistente=tableroLogico_1[cuadro1][posicion1]
+                        if numeroexistente!=None:
+                            numerosV.append(numeroexistente)
+                        
+                    print(numerosV)
+                    break
+            
+            a=False
+            while num in numerosV:
+
+                num=random.choice(numeros)
+                print(num)
+                numeros.remove(num)
+                numeroremovido.append(num)
+                a=True
+            
+            if a==True:
+                numeroremovido.pop(-1)
+                
+                for i in numeroremovido:
+                    if i not in numeros:
+                        numeros.append(i)
+
+            tableroLogico_1[cuadro][posicion]=num
+            tableroLogico_2[cuadro][posicion]=num
+
+
+            import Interfaz
+            Interfaz.imprimirTablero(tableroLogico_1)"""
+
     duplas=[]
     lineasInterceptasLista=[]
 
     for cuadro in cuadros:
-        for posicion in range(0,9):
-            dupla=(cuadro,posicion)
-            duplas.append(str(dupla).replace(' ',''))
+       for posicion in range(0,9):
+           dupla=(cuadro,posicion)
+           duplas.append(str(dupla).replace(' ',''))
 
-            listaIndex=[]
-            for index in lineasHDic.keys():
-                if dupla in lineasHDic[index]:
-                    listaIndex.append(index)
+           listaIndex=[]
+           for index in lineasHDic.keys():
+               if dupla in lineasHDic[index]:
+                   listaIndex.append(index)
 
-            for index in lineasVDic.keys():
-                if dupla in lineasVDic[index]:
-                    listaIndex.append(index)
+           for index in lineasVDic.keys():
+               if dupla in lineasVDic[index]:
+                   listaIndex.append(index)
 
-            lineasInterceptasLista.append(listaIndex)
+           lineasInterceptasLista.append(listaIndex)
 
     lineasInterceptasDic=dict(zip(duplas,lineasInterceptasLista))
 
     for cuadro in cuadros:
 
-        posicion=[0,1,2,3,4,5,6,7,8]
-        numeros=[1,2,3,4,5,6,7,8,9]
-        cantidad=(2,3,4,5)
+       posicion=[0,1,2,3,4,5,6,7,8]
+       numeros=[1,2,3,4,5,6,7,8,9]
+       cantidad=(2,3,4,5)
 
-        cantidad_aleatoria=random.choice(cantidad)
+       cantidad_aleatoria=random.choice(cantidad)
 
-        for i in range(0,cantidad_aleatoria):
+       for i in range(0,cantidad_aleatoria):
 
-            if numeros!=[]:
+           if numeros!=[]:
 
-                pos=random.choice(posicion)
-                posicion.remove(pos)
+               pos=random.choice(posicion)
+               posicion.remove(pos)
 
-                [linea1,linea2]=lineasInterceptasDic['('+str(cuadro)+','+str(pos)+')']
+               [linea1,linea2]=lineasInterceptasDic['('+str(cuadro)+','+str(pos)+')']
 
-                fila1=[]
-                fila2=[]
+               fila1=[]
+               fila2=[]
 
-                for cuadro1,posicion1 in lineasHDic[linea1]:
-                    numeroExistente=tableroLogico_1[cuadro1][posicion1]
-                    fila1.append(numeroExistente)
+               for cuadro1,posicion1 in lineasHDic[linea1]:
+                   numeroExistente=tableroLogico_1[cuadro1][posicion1]
+                   fila1.append(numeroExistente)
 
-                for cuadro1,posicion1 in lineasVDic[linea2]:
-                    numeroExistente=tableroLogico_1[cuadro1][posicion1]
-                    fila2.append(numeroExistente)
+               for cuadro1,posicion1 in lineasVDic[linea2]:
+                   numeroExistente=tableroLogico_1[cuadro1][posicion1]
+                   fila2.append(numeroExistente)
 
 
-                num=random.choice(numeros)
-                numeros.remove(num)
+               num=random.choice(numeros)
+               numeros.remove(num)
 
-                while num in fila1 or num in fila2:
-                    numerosFilas=[]
+               while num in fila1 or num in fila2:
+                   numerosFilas=[]
 
-                    if numeros!=[]:
-                        num=random.choice(numeros)
-                        numerosFilas.append(num)
-                        numeros.remove(num)
-                    else:
-                        num=' '
-                        #print('BREAK')
-                        break
-                    
-                    numerosFilas.remove(num)
-                    numeros.extend(numerosFilas)
+                   if numeros!=[]:
+                       num=random.choice(numeros)
+                       numerosFilas.append(num)
+                       numeros.remove(num)
+                   else:
+                       num=' '
+                       print('BREAK SINGULAR')
+                       break
+                   
+                   numerosFilas.remove(num)
+                   numeros.extend(numerosFilas)
 
-                tableroLogico_1[cuadro][pos]=num
-                tableroLogico_2[cuadro][pos]=num
-            else:
-                #print('BREAK')
-                break
+               tableroLogico_1[cuadro][pos]=num
+               tableroLogico_2[cuadro][pos]=num
+           else:
+               print('BREAK TOTAL')
+               break
 
 
     return tableroLogico_1,tableroLogico_2

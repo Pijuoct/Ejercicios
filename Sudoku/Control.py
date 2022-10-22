@@ -41,9 +41,5 @@ while vacio==True:
         print('El numero en esta posicion (%s-%s) es FIJO y por ende no puede ser reemplazado'%(cuadro_mayor,posicion))
 
 
-    for cuadricula in tableroLogico:
-        if None not in cuadricula:
-            vacio=False
-            break
     
 
