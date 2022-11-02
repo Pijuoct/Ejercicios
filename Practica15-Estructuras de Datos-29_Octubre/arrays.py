@@ -288,4 +288,7 @@ eureka=list(zip(filas,columnas))
 """Ejemplo: como guardar un arrelgo en el disco duro
 """
 
-np.savetxt('ventasTrabajadores.csv',dataarray)
+np.savetxt('Ejercicios/Practica15-Estructuras de Datos-29_Octubre/ventasTrabajadores.csv',dataarray)  #almacenar
+data=np.loadtxt('ventasTrabajadores.csv')       #leer
+
+print(data)
