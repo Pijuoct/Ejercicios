@@ -171,3 +171,116 @@ seccion=matriz2[1:,0:2]
 print(seccion)
 
 
+"""Cree la siguiente matriz y el siguiente vector
+
+matriz=[1  2  3  4  5
+        6  7  8  9  10
+        11 12 13 14 15]
+
+vector= [1 2 3]
+
+aplique el vector a la matriz y luego extraiga una seccion compuesta 
+por la fila 2 (indice 1) y fila 3 (indice 2)
+
+"""
+
+print('')
+print('')
+print('')
+matriz=np.arange(1,16).reshape(3,5)
+vector=np.arange(1,4)
+print(matriz,vector)
+print('')
+matrizNueva1 = np.hstack((matriz, vector.reshape((3,1))))
+
+print(matrizNueva1)
+print('')
+seccion=matrizNueva1[1:3,:]
+print(seccion)
+
+
+#------------------------------- funciones estadisticas mean, std, min, max -------------------------------
+
+"""
+calcular la media del vector 1 y vector2
+"""
+print('')
+print('medias:')
+print(vector1.mean())
+print(vector2.mean())
+
+"""Ejemplo: calcular la media de matriz2
+            por fila
+            por columna
+            total"""
+
+print('') #axis=0 es por columna, axis=1 es por fila
+print(matriz2.mean(axis=0))
+print(matriz2.mean(axis=1))
+print(matriz2.mean())
+
+
+"""Ejemplo: calcular la desviacion estandar, el max y min de matriz2
+            por fila
+            por columna
+            total"""
+
+print('') 
+print(matriz2.std(axis=0))
+print(matriz2.std(axis=1))
+print(matriz2.std())
+
+print('') 
+print(matriz2.max(axis=0))
+print(matriz2.max(axis=1))
+print(matriz2.max())
+
+print('') 
+print(matriz2.min(axis=0))
+print(matriz2.min(axis=1))
+print(matriz2.min())
+
+"""
+ejemplo: 
+determine la cantidad media de productos vendidos por trabajador
+determine la media por cada producto
+determine el producto menos vendido
+determine el producto ccon mas ventas
+
+"""
+
+data=[[20    ,    22   ,    30    ,    2     ,    40      ,    20     ,   3 ],
+      [31    ,    14   ,    32    ,    15    ,    13      ,    20     ,   11],
+      [24    ,    32   ,    40    ,    9     ,    12      ,    50     ,   13],
+      [42    ,    12   ,    33    ,    24    ,    22      ,    32     ,   23],
+      [51    ,    21   ,    25    ,    10    ,    19      ,    14     ,   2 ],
+      [22    ,    31   ,    51    ,    21    ,    35      ,    15     ,   11],
+      [21    ,    36   ,    22    ,    32    ,    39      ,    32     ,   15],
+      [22    ,    33   ,    41    ,    21    ,    43      ,    31     ,   36],
+      [33    ,    31   ,    20    ,    42    ,    33      ,    42     ,   35],
+      [22    ,    47   ,    5     ,    28    ,    37      ,    31     ,   32],
+      [24    ,    38   ,    33    ,    21    ,    41      ,    31     ,   16],
+      [21    ,    18   ,    32    ,    37    ,    39      ,    22     ,   12],
+      [33    ,    31   ,    21    ,    21    ,    33      ,    39     ,   25],
+      [25    ,    39   ,    20    ,    48    ,    15      ,    30     ,   32],
+      [27    ,    32   ,    29    ,    28    ,    37      ,    35     ,   16],
+      [24    ,    12   ,    31    ,    21    ,    39      ,    32     ,   13],
+      [31    ,    31   ,    50    ,    22    ,    13      ,    30     ,   21],
+      [23    ,    35   ,    35    ,    39    ,    31      ,    19     ,   19],
+      [26    ,    36   ,    39    ,    27    ,    35      ,    32     ,   16],
+      [25    ,    31   ,    21    ,    21    ,    25      ,    37     ,   15],
+      [23    ,    34   ,    35    ,    32    ,    37      ,    20     ,   49],
+      [31    ,    14   ,    29    ,    39    ,    25      ,    37     ,   16],
+      [26    ,    31   ,    31    ,    27    ,    37      ,    32     ,   41],
+      [40    ,    42   ,    23    ,    11    ,    21      ,    15     ,   19],
+      [27    ,    31   ,    39    ,    21    ,    31      ,    32     ,   25],
+      [38    ,    32   ,    19    ,    29    ,    35      ,    50     ,   16]]
+ 
+dataarray=np.array(data)
+print(dataarray)
+
+print(dataarray.mean(axis=1))
+print(dataarray.mean(axis=0))
+
+
+
