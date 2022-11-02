@@ -282,5 +282,10 @@ print(dataarray)
 print(dataarray.mean(axis=1))
 print(dataarray.mean(axis=0))
 
+filas,columnas=np.where(dataarray==16)
+eureka=list(zip(filas,columnas))
 
+"""Ejemplo: como guardar un arrelgo en el disco duro
+"""
 
+np.savetxt('ventasTrabajadores.csv',dataarray)
