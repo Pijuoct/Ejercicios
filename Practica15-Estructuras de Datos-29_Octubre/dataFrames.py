@@ -71,3 +71,35 @@ print("-----------------------")
 print("minimos =>\n", minimos)
 print("maximos =>\n", maximos)
 
+
+#11-11-2022
+
+#-------------Indexado de dataframes --------------------------
+
+#El indexado se trabaja igual que en los arreglos numpy.
+#Ademas se puede acceder por clave
+
+
+arreglo = np.arange(1,25).reshape(3,8)
+
+hoja3 = pd.DataFrame(data= arreglo,
+                     columns = ["col1", "col2", "col3", "col4", "col5", "col6", "col7", "col8"],
+                     index = ["Alex", "Juan", "Maria"])
+print(hoja3)
+
+
+
+"""
+Ejemplo: Acceder a toda la columna col3
+         Acceder a toda la fila Alex"
+"""
+
+columna = hoja3["col3"]
+fila = hoja3.loc["Alex"]
+
+print("columna =>\n", columna)
+print("fila=>\n", fila)
+
+
+resultado=hoja3.loc['Maria','col2']
+print(resultado)
