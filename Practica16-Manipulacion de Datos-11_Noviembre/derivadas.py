@@ -14,6 +14,7 @@ hoja1 = pd.DataFrame(data= data,
                      index= x,
                      columns= ["f1", "f2", "f3"])
 
+#print(hoja1)
 
 """ 
  Para calcular derivadas se hace uso de su significado geometrico

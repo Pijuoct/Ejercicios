@@ -1,11 +1,11 @@
 """crear un dataFrame compuesto por la siguiente informacion =>
 codigo   tamaño   precio  
-  001      1       12000   
-  002      2       15000 
-  003      3       21000
-  004      2       32000
-  005      1       11000
-  006      2       90000"""
+  Semestre 1     1       12000   
+  Semestre 1         2       15000 
+  Semestre 2      3       21000
+           2       32000
+           1       11000
+           2       90000"""
 
 import numpy as np
 import pandas as pd
@@ -19,7 +19,9 @@ data = np.array([[1, 12000],
 
 hoja1 = pd.DataFrame( data = data,
                       columns = ["tamaño", "precio"],
-                      index = ["001","002","003","004","005","006"])
+                      index = ["001","001","003","004","005","006"])
+
+print(hoja1.loc['001'])
 
 
 """
@@ -27,6 +29,14 @@ Crear un dataframe que cumpla con lo siguiente:
 
 cada columna hace referencia a una funcion f1,f2,f3,f4,f5
 los indices van a ser referencia al variable independiente [0,0.5,1,1.5,...,200]
+semestre =  10
+ for i in range (0,len(semestre)):
+   Index = str(i)
+   Semestre = 'Semestre '+ Index
+   Semestre = Semestre 1 , Semestre 2,
+   print(DATAFRAME(Semestre))
+   print('///////////////////////////////////////////////////)
+    
 
 f1(x)= 3x + 5
 f2(x)= x + random
